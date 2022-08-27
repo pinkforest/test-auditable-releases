@@ -19,7 +19,7 @@ jobs:
     uses: pinkforest/auditable-builder/.github/workflows/rust-builder.yml@main
     with:
       component: ${{ github.event.inputs.name }}
-      json-rust-target: '["x86_64-unknown-linux-gnu", "86_64-unknown-linux-musl", "x86_64-apple-darwin", "aarch64-unknown-linux-gnu", "x86_64-pc-windows-msvc", "aarch64-apple-darwin", "arm-unknown-linux-musleabi"]'
+      json-rust-target: '["x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl", "x86_64-apple-darwin", "aarch64-unknown-linux-gnu", "x86_64-pc-windows-msvc", "aarch64-apple-darwin", "arm-unknown-linux-musleabi"]'
       use-cache: true
       serial: test
 
