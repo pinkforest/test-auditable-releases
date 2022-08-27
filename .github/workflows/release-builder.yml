@@ -9,6 +9,7 @@ on:
         type: choice
         options:
           - rust-secure-code/cargo-geiger
+          - radicle-dev/radicle-cli
 
 jobs:
       
