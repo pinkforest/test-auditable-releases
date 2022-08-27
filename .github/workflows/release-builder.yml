@@ -112,10 +112,10 @@ jobs:
       ###################################################################################################
       # Normalise built artifacts into release artifacts in ./binaries without hardcoding triples
       # binaries/normalised-name-triplet/binary -> binary-normalised-name-triplet.bin
-#      - name: Normalise binary names for Release artifacts
-#        run: |
-#          cd binaries
-#          find . -type f -name "$CNAME" -exec echo '{}' \; | grep -oP './\K.+(?=\/)' | xargs -d $'\n' sh -c 'for arg do mv "$arg/$CNAME" "$arg.bin"; rm -r "$arg"; done' _
+      - name: Normalise binary names for Release artifacts
+        run: |
+          cd binaries
+          find . -type f -name \* | sed -r 's/binaries\/([A-Za-z0-9_\-]+)\/([A-Za-z0-9_\-]+)/mv \0 \2-\1.bin/' | xargs -d $'\n' sh -c 'for arg do $arg ; done' _
       ###################################
       # Bundle the final release out
       #
@@ -131,5 +131,5 @@ jobs:
           prerelease: false
           commit: ${{ github.event.inputs.name }}@${{ github.event.inputs.tag }}
           removeArtifacts: true
-          artifacts: "./binaries/*"
+          artifacts: "./binaries/*.bin"
           token: ${{ secrets.GITHUB_TOKEN }}
