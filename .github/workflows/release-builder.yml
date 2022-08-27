@@ -22,7 +22,7 @@ jobs:
     with:
       component: ${{ github.event.inputs.name }}
 #      json-rust-target: '["x86_64-unknown-linux-gnu", "x86_64-unknown-linux-musl", "x86_64-apple-darwin", "aarch64-unknown-linux-gnu", "x86_64-pc-windows-msvc", "aarch64-apple-darwin", "arm-unknown-linux-musleabi"]'
-      json-matrix: '[{"rust-target": "x86_64-unknown-linux-gnu", "os": "ubuntu-latest", "rust": "stable"}, {"rust-target": "x86_64-pc-windows-msvc", "os": "windows-latest"}]
+      json-matrix: '[{"rust-target": "x86_64-unknown-linux-gnu", "os": "ubuntu-latest", "rust": "stable"}, {"rust-target": "x86_64-pc-windows-msvc", "os": "windows-latest"}]'
       use-cache: true
       use-locked: false
       serial: test
