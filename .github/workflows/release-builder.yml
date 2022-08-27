@@ -85,7 +85,7 @@ jobs:
           author_name: Releaser
           author_email: no_spam@nowhere.nowhere.devnull
           message: 'Release'
-          new_branch: ${{ github.event.inputs.name }}-v${{ github.event.inputs.tag }}
+          new_branch: ${{ github.event.inputs.name }}@${{ github.event.inputs.tag }}
           add: '.'
           cwd: './fused/'
       ###################################################
@@ -126,11 +126,11 @@ jobs:
         uses: ncipollo/release-action@v1
         id: create_release
         with:
-          #tag: ${{ env.REPO_ONLY_NORMAL }}-${{ github.event.inputs.tag }}
+          tag: ${{ env.REPO_ONLY_NORMAL }}@${{ github.event.inputs.tag }}
           release_name: ${{ env.REPO_ONLY_NORMAL }}-${{ github.event.inputs.tag }}
           draft: false
           prerelease: false
-          commit: ${{ github.event.inputs.name }}-${{ github.event.inputs.tag }}
+          commit: ${{ github.event.inputs.name }}@${{ github.event.inputs.tag }}
           removeArtifacts: true
           artifacts: "./binaries/*"
           token: ${{ secrets.GITHUB_TOKEN }}
