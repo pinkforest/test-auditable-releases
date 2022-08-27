@@ -8,6 +8,7 @@ on:
         required: true
         type: choice
         options:
+          - pinkforest/auditable-rust-test-project
           - rust-secure-code/cargo-geiger
           - radicle-dev/radicle-cli
 
@@ -53,7 +54,7 @@ jobs:
       - name: Tar
         run: |
           tar --directory=repo -cvf repo-src.tar ./
-          mkdir repo-src; tar --directory=repo-src -xvf release-src.tar
+          mkdir repo-src; tar --directory=repo-src -xvf repo-src.tar
       - name: Unlink Source Repo
         run: |
           rm -rf repo
