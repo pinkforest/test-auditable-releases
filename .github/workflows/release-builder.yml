@@ -127,7 +127,6 @@ jobs:
         id: create_release
         with:
           tag: ${{ env.REPO_ONLY_NORMAL }}@${{ github.event.inputs.tag }}
-          release_name: ${{ env.REPO_ONLY_NORMAL }}-${{ github.event.inputs.tag }}
           draft: false
           prerelease: false
           commit: ${{ github.event.inputs.name }}@${{ github.event.inputs.tag }}
