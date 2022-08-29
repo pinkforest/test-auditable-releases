@@ -1,4 +1,4 @@
-name: "Test Auditable Rust Release"
+name: "Nightly Auditable Rust Release"
 
 on:
   workflow_dispatch:
