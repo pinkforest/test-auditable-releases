@@ -1,0 +1,15 @@
+[package]
+name = "rust-audit-info"
+version = "0.4.0"
+authors = ["Sergey \"Shnatsel\" Davidoff <shnatsel@gmail.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/rust-secure-code/cargo-auditable"
+description = "Command-line tool to extract the dependency trees embedded in binaries by `cargo auditable`."
+categories = ["command-line-utilities", "encoding"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+auditable-extract = {version = "0.3.0", path = "../auditable-extract"}
+miniz_oxide = "0.5.3"

@@ -1,0 +1,24 @@
+[package]
+name = "cargo-auditable"
+version = "0.5.1"
+edition = "2021"
+authors = ["Sergey \"Shnatsel\" Davidoff <shnatsel@gmail.com>"]
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/rust-secure-code/cargo-auditable"
+description = "Make production Rust binaries auditable"
+categories = ["development-tools::cargo-plugins", "encoding"]
+readme = "../README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+object = {version = "0.28.1", default-features = false, features = ["write"]}
+auditable-serde = {version = "0.5.0", path = "../auditable-serde", features = ["from_metadata"]}
+miniz_oxide = {version = "0.5.0"}
+serde_json = "1.0.57"
+cargo_metadata = "0.15"
+pico-args = "0.5"
+
+[dev-dependencies]
+cargo_metadata = "0.15"
+auditable-extract = {version = "0.3.0", path = "../auditable-extract"}

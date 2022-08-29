@@ -1,0 +1,20 @@
+[package]
+name = "crate_with_features"
+version = "0.1.0"
+edition = "2021"
+publish = false
+
+[[bin]]
+# avoid pdb name collision with lib target
+name = "crate_with_features_bin"
+path = "src/main.rs"
+
+[dependencies]
+library_crate = {path = "../library_crate", optional = true}
+binary_and_cdylib_crate = {path = "../binary_and_cdylib_crate", optional = true}
+
+[features]
+default = ["library_crate"]
+library_crate = ["dep:library_crate"]
+binary_and_cdylib_crate = ["dep:binary_and_cdylib_crate"]
+
